@@ -1,0 +1,16 @@
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<body>
+	<div sec:authorize="isAuthenticated()">
+		User: <span th:text="${userMasterDetails}"></span></br>
+		<a th:href="@{/perform_logout}">Logout</a>
+		<a th:href="@{/perform_invalid}">Invalidate Session</a>
+	</div>
+	<div> 
+	<span th:text="${currentUser}" ></span>
+	<span th:text="${currentUserRoles}"></span>
+	
+	</div>
+</body>
+
+</html>
